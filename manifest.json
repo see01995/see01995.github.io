@@ -3,12 +3,12 @@
   "short_name": "PWA Demo",
   "display": "standalone",
   "start_url": "/",
-  "theme_color": "#313131",
+  "theme_color": "#y",
   "background_color": "#313131",
   "icons": [
     {
-      "src": "e.png",
-      "sizes": "256x256",
+      "src": "tape.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ]
