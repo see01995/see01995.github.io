@@ -1,6 +1,6 @@
 
 console.log('Script loaded!')
-var cacheStorageKey = 'minimal-pwa-8'
+var cacheStorageKey = 'minimal-pwa-9'
 
 var cacheList = [
   '/',
