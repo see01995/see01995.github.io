@@ -7,6 +7,8 @@ var cacheList = [
   "index.html",
   "main.css",
   "tape.png",
+  "brython.js",
+  "clock.py",
   "pwa-fonts.png"
 ]
 

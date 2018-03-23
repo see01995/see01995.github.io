@@ -1,4 +1,3 @@
-
 <head>
   <title>Minimal PWA</title>
   <meta name="viewport" content="width=device-width, user-scalable=no" />
@@ -6,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="main.css">
   <link rel="icon" href="/tape.png" type="image/png" />
   <meta name="theme-color" content="#8888ff"/>
+  <script type="text/javascript" src="brython.js"></script>
 </head>
 
 <body>
@@ -17,6 +17,7 @@
   <div class="main-text">
           <a href="https://see01995.github.io/ExhibitionWebApp/index.html">ExhibitionWebApp</a>
   </div>
+  <div><canvas width="250" height="250" id="clock"></div>
   <div class="network-message">
     Network:
     <span id="network-status" class="">Good</span>
@@ -36,5 +37,8 @@
       statusEl.classList = ['is-offline']
       statusEl.innerText = 'Offline'
     }
+  </script>
+  <script type="text/python3">
+    import clock
   </script>
 </body>
