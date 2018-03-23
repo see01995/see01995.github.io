@@ -1,0 +1,15 @@
+{
+  "name": "ExhibitionWebApp",
+  "short_name": "Exhibition PWA",
+  "display": "standalone",
+  "start_url": "/",
+  "theme_color": "#8888ff",
+  "background_color": "#313131",
+  "icons": [
+    {
+      "src": "top.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
