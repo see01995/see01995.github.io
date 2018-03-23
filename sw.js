@@ -6,7 +6,7 @@ var cacheList = [
   '/',
   "index.html",
   "main.css",
-  "e.png",
+  "tape.png",
   "pwa-fonts.png"
 ]
 
