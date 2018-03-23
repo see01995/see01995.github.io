@@ -5,6 +5,8 @@ import datetime
 from browser import document as doc
 import browser.timer
 
+print('clock.py in')
+
 sin, cos = math.sin, math.cos
 width, height = 250, 250 # canvas dimensions
 ray = 100 # clock ray
@@ -96,3 +98,5 @@ if hasattr(canvas, 'getContext'):
         ctx.stroke()
     browser.timer.set_interval(set_clock, 100)
     show_hours()
+else:
+    print('clock.py failed')
