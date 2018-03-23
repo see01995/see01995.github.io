@@ -29,11 +29,13 @@ self.addEventListener('activate', function(e) {
   console.log('Activate event')
   e.waitUntil(
     Promise.all(
+      caches.keys().then(cacheNames => {
         cacheNames.filter(name => {
             return name !== cacheStorageKey
         }).map(name => {
             return caches.delete(name)
         })
+      })
     ).then(() => {
       console.log('Clients claims.')
       return self.clients.claim()
