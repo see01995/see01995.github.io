@@ -3,26 +3,26 @@ console.log('Script loaded!')
 var cacheStorageKey = 'ExhibitionWebApp-1.0'
 
 var cacheList = [
-  '/',
-  "index.html",
-  "index.py",
-  "log.py",
-  "pattern.py",
-  "top.png",
-  '/js/',
-  '/js/amazeui.datetimepicker.min.js',
-  '/js/amazeui.min.js',
-  '/js/bython.js',
-  '/js/bython_dist.js',
-  '/js/jquery-3.3.2.min.js',
-  '/fonts/',
-  '/fonts/FontAwesome.otf',
-  '/fonts/fontawesome-webfont.eot',
-  '/fonts/fontawesome-webfont.ttf',
-  '/fonts/fontawesome-webfont.woff',
-  '/fonts/fontawesome-webfont.woff2',
-  '/css/amazeui.datetimepicker.css',
-  '/css/amazeui.min.css'
+  '/ExhibitionWebApp/',
+  "/ExhibitionWebApp/index.html",
+  "/ExhibitionWebApp/index.py",
+  "/ExhibitionWebApp/log.py",
+  "/ExhibitionWebApp/pattern.py",
+  "/ExhibitionWebApp/top.png",
+  '/ExhibitionWebApp/js/',
+  '/ExhibitionWebApp/js/amazeui.datetimepicker.min.js',
+  '/ExhibitionWebApp/js/amazeui.min.js',
+  '/ExhibitionWebApp/js/bython.js',
+  '/ExhibitionWebApp/js/bython_dist.js',
+  '/ExhibitionWebApp/js/jquery-3.3.2.min.js',
+  '/ExhibitionWebApp/fonts/',
+  '/ExhibitionWebApp/fonts/FontAwesome.otf',
+  '/ExhibitionWebApp/fonts/fontawesome-webfont.eot',
+  '/ExhibitionWebApp/fonts/fontawesome-webfont.ttf',
+  '/ExhibitionWebApp/fonts/fontawesome-webfont.woff',
+  '/ExhibitionWebApp/fonts/fontawesome-webfont.woff2',
+  '/ExhibitionWebApp/css/amazeui.datetimepicker.css',
+  '/ExhibitionWebApp/css/amazeui.min.css'
 ]
 
 self.addEventListener('install', function(e) {
@@ -38,23 +38,22 @@ self.addEventListener('install', function(e) {
   )
 })
 
-self.addEventListener('activate', function(e) {
+self.addEventListener('activate', function(event) {
   console.log('Activate event')
-  e.waitUntil(
-    Promise.all(
-      caches.keys().then(cacheNames => {
-        return cacheNames.map(name => {
-          if (name !== cacheStorageKey) {
-            return caches.delete(name)
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.map(function(cacheName) {
+          // 如果当前版本和缓存版本不一致
+          if (cacheName !== cacheStorageKey) {
+            console.log('Activate event: del cache')
+            return caches.delete(cacheName);
           }
         })
-      })
-    ).then(() => {
-      console.log('Clients claims.')
-      return self.clients.claim()
+      );
     })
-  )
-})
+  );
+});
 
 self.addEventListener('fetch', function(e) {
   // console.log('Fetch event:', e.request.url)
