@@ -1,6 +1,6 @@
 
 console.log('Script loaded!')
-var cacheStorageKey = 'minimal-pwa-9'
+var cacheStorageKey = 'minimal-pwa-1'
 
 var cacheList = [
   '/',
@@ -26,23 +26,22 @@ self.addEventListener('install', function(e) {
   )
 })
 
-self.addEventListener('activate', function(e) {
+self.addEventListener('activate', function(event) {
   console.log('Activate event')
-  //e.waitUntil(
-  //  Promise.all(
-  //    caches.keys().then(cacheNames => {
-  //      cacheNames.filter(name => {
-  //          return name !== cacheStorageKey
-  //      }).map(name => {
-  //          return caches.delete(name)
-  //      })
-  //    })
-  //  ).then(() => {
-  //    console.log('Clients claims.')
-  //    return self.clients.claim()
-  //  })
-  //)
-})
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.map(function(cacheName) {
+          // 如果当前版本和缓存版本不一致
+          if (cacheName !== cacheStorageKey) {
+            console.log('Activate event: del cache')
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
+});
 
 self.addEventListener('fetch', function(e) {
   // console.log('Fetch event:', e.request.url)
