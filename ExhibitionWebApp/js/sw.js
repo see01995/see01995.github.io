@@ -1,6 +1,6 @@
 
 console.log('Script loaded!')
-var cacheStorageKey = 'ExhibitionWebApp-1.1'
+var cacheStorageKey = 'ExhibitionWebApp-1.2'
 
 var cacheList = [
   '/ExhibitionWebApp/',
