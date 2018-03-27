@@ -52,7 +52,7 @@ def get_file_text(file_name):
 def refresh():
     expo_list = []
     lines = get_file_text('sneic.json')
-    #print(lines)
+    print("hello world!")
     expo_json = json.loads(lines)
     print(expo_json)
     document['expo_list'].clear()
