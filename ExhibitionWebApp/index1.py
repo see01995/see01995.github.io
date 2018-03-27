@@ -53,8 +53,8 @@ def refresh():
     expo_list = []
     lines = get_file_text('sneic.json')
     print("hello world!")
-    expo_json = json.loads(lines)
-    print(expo_json)
+    #expo_json = json.loads(lines)
+    #print(expo_json)
     document['expo_list'].clear()
     for item in document.get(name="cbx"):
         if(item.checked==True):
