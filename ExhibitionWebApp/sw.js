@@ -5,6 +5,7 @@ var cacheStorageKey = 'ExhibitionWebApp-1.2'
 var cacheList = [
   '/ExhibitionWebApp/',
   "/ExhibitionWebApp/index.html",
+  "/ExhibitionWebApp/expo_info.py",
   "/ExhibitionWebApp/index1.py",
   "/ExhibitionWebApp/top.png",
   "/ExhibitionWebApp/sneic.json",
