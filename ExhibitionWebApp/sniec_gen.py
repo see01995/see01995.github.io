@@ -54,20 +54,14 @@ def get_expo_list(abb,year,month):
         #fp = open(abb+str(year)+str(month)+'.html','wb')
         #fp.write(lines)
         #fp.close()
-        mdict = {}
-        m = re.search(pattern[abb]['info_pattern'].encode('utf-8'),lines,re.S)
-        if m!=None:
-            #print(m.group(0))
-            mdict.update(m.groupdict())
-            if len(mdict) == 4:
-                print(mdict)
-                expo = expo_info(pattern[abb]['name'],pattern[abb]['addr'],url)
-                expo.show       = mdict['showname'].decode()
-                expo.hall       = mdict['hall'].decode()
-                expo.startdate  = datetime.strptime(mdict['startdate'].decode(),pattern[abb]['date_pattern'])
-                expo.enddate    = datetime.strptime(mdict['enddate'].decode(),pattern[abb]['date_pattern'])
-                expo_list.append(expo)
-                mdict = {}
+        match_list = re.findall(pattern[abb]['info_pattern'].encode('utf-8'),lines,re.S)
+        for m in match_list:
+            expo = expo_info(pattern[abb]['name'],pattern[abb]['addr'],url)
+            expo.show       = m[0].decode() #showname
+            expo.hall       = m[1].decode() #hall
+            expo.startdate  = datetime.strptime(m[2].decode(),pattern[abb]['date_pattern']) #startdate
+            expo.enddate    = datetime.strptime(m[3].decode(),pattern[abb]['date_pattern']) #enddate
+            expo_list.append(expo)
         print('pattern search done')
         if(len(expo_list)==0):
             print("{}  {}/{}  无展会\n\n请确认下网址的正确性：\n\n{}".format(pattern[abb]['name'],year,month,url))
