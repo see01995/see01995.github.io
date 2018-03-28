@@ -10,6 +10,7 @@ class expo_info:
         self.list_item  = None
 
     def show_info(self):
+        print("----------------")
         print("name  : {}".format(self.name))
         print("show  : {}".format(self.show))
         print("addr  : {}".format(self.addr))

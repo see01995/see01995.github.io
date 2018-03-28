@@ -41,6 +41,18 @@ def gen_url_list(abb,year,month):
         url_list.append(url)
     return url_list
 
+def merge_list(old_list):
+    new_list = []
+    print(len(old_list))
+    for key,old in enumerate(old_list):
+        if key != 0 :
+            if old['show'] != old_list[key-1]['show']:
+                new_list.append(old)
+        else:
+            new_list.append(old)
+    print(len(new_list))
+    return new_list
+
 def get_expo_list(abb,year,month):
     expo_list = []
     url_list = gen_url_list(abb,year,month)
@@ -75,11 +87,12 @@ if __name__ == '__main__' :
         for i in range(12):
             expo_list += get_expo_list(key,now.year,i+1)
     for expo in expo_list:
-        expo.show_info()
+        #expo.show_info()
         #expo.gen_json()
         json_list.append(expo.gen_json())
 
+    json_list = merge_list(json_list)
     print(json_list)
-    fp = open('sneic.json','w')
+    fp = open('sniec.json','w')
     json.dump({str(now.year):json_list},fp)
     fp.close()
