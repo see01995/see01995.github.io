@@ -6,10 +6,9 @@ var cacheList = [
   '/ExhibitionWebApp/',
   "/ExhibitionWebApp/index.html",
   "/ExhibitionWebApp/expo_info.py",
-  "/ExhibitionWebApp/index1.py",
+  "/ExhibitionWebApp/index.py",
   "/ExhibitionWebApp/top.png",
-  "/ExhibitionWebApp/sneic.json",
-  '/ExhibitionWebApp/js/amazeui.datetimepicker.min.js',
+  "/ExhibitionWebApp/sniec.json",
   '/ExhibitionWebApp/js/amazeui.min.js',
   '/ExhibitionWebApp/js/bython_dist.js',
   '/ExhibitionWebApp/js/jquery-3.3.2.min.js',
@@ -18,7 +17,6 @@ var cacheList = [
   '/ExhibitionWebApp/fonts/fontawesome-webfont.ttf',
   '/ExhibitionWebApp/fonts/fontawesome-webfont.woff',
   '/ExhibitionWebApp/fonts/fontawesome-webfont.woff2',
-  '/ExhibitionWebApp/css/amazeui.datetimepicker.css',
   '/ExhibitionWebApp/css/amazeui.min.css'
 ]
 
