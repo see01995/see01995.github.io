@@ -11,14 +11,6 @@ from expo_info import *
 
 jq = window.jQuery
 
-jq('#datepicker').datetimepicker({'format': 'yyyy-mm',
-                                  'autoclose': 'true',
-                                  'viewMode': 'years',
-                                  'minView': 'months',
-                                  'viewSelect': 'years',
-                                  'todayHighlight': 'true',
-                                  'todayBtn': 'true'})
-
 def add_place(name,abb,default=False):
     place_label = HTML.LABEL(name,Class='am-checkbox')
     if(default == True):
@@ -82,8 +74,9 @@ jq('#my-popup').on('close.modal.amui',onPlaceSelected)
 
 def onDateChanged(ev):
     refresh()
-jq('#datepicker').datetimepicker().on('changeDate',onDateChanged)
+jq('#datepicker').datepicker().on('changeDate.datepicker.amui',onDateChanged)
 
-now = datetime.now().date().strftime('%Y-%m')
-jq('#datepicker').datetimepicker('update',now)
+now = window.Date()
+print(now)
+jq('#datepicker').datepicker('setValue',now)
 refresh()
