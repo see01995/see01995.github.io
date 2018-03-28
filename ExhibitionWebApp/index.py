@@ -1,12 +1,8 @@
 from browser import document, alert, window
 from browser import html as HTML
-from urllib import request
-import re
 import json
-from datetime import *
 import time
 
-#from log import *
 from expo_info import *
 
 jq = window.jQuery
