@@ -55,6 +55,7 @@ def refresh():
     date_info = document['datepicker'].value.split('-') #0:year,1:month
     lines = get_file_text('sneic.json')
     expo_list_year = json.loads(lines)[date_info[0]]
+    print(expo_list_year)
     expo_list += list(filter(lambda x: (x['start'][:7]==date_info[0]+'/'+date_info[1])or(x['end'][:7]==date_info[0]+'/'+date_info[1]),expo_list_year))
     print(expo_list)
     #for item in document.get(name="cbx"):
