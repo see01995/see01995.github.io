@@ -111,4 +111,8 @@ jq('#datepicker').datepicker().on('changeDate.datepicker.amui',onDateChanged)
 
 now = window.Date()
 jq('#datepicker').datepicker('setValue',now)
+
+list_height = document.documentElement.clientHeight - document['expo_list'].offsetTop
+document['expo_list'].height=list_height-document['expo_list'].abs_left
+
 refresh()
