@@ -19,7 +19,9 @@ def add_place(name,abb,default=False):
 document['place_list'] <= add_place('上海新国际博览中心','SNIEC')
 
 def get_file_text(file_name):
-    fake_qs = '?foo={}'.format(time.time())
+    #fake_qs = '?foo={}'.format(time.time())
+    fake_qs = '?foo={}'.format(windows.date.new().getTime())
+    print(fake_qs)
     return open(file_name+fake_qs).read()
 
 def gen_li(item):
@@ -48,7 +50,7 @@ def show_expo_list(li):
         print("end   : {}".format(i['end']))
 
 def refresh():
-    print('refresh')
+    print('refresh00')
     expo_list = []
     document['expo_list'].clear()
 
@@ -73,6 +75,5 @@ def onDateChanged(ev):
 jq('#datepicker').datepicker().on('changeDate.datepicker.amui',onDateChanged)
 
 now = window.Date()
-print(now)
 jq('#datepicker').datepicker('setValue',now)
 refresh()
