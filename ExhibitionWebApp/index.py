@@ -1,7 +1,6 @@
 from browser import document, alert, window
 from browser import html as HTML
 import json
-import time
 
 from expo_info import *
 
@@ -19,8 +18,7 @@ def add_place(name,abb,default=False):
 document['place_list'] <= add_place('上海新国际博览中心','SNIEC')
 
 def get_file_text(file_name):
-    #fake_qs = '?foo={}'.format(time.time())
-    fake_qs = '?foo={}'.format(windows.date.new().getTime())
+    fake_qs = '?foo={}'.format(window.Date.new().getTime())
     print(fake_qs)
     return open(file_name+fake_qs).read()
 
