@@ -13,10 +13,6 @@ var cacheList = [
   '/ExhibitionWebApp/js/bython.js',
   '/ExhibitionWebApp/js/brython_modules.js',
   '/ExhibitionWebApp/js/jquery-3.3.2.min.js',
-  '/ExhibitionWebApp/fonts/FontAwesome.otf',
-  '/ExhibitionWebApp/fonts/fontawesome-webfont.eot',
-  '/ExhibitionWebApp/fonts/fontawesome-webfont.ttf',
-  '/ExhibitionWebApp/fonts/fontawesome-webfont.woff',
   '/ExhibitionWebApp/fonts/fontawesome-webfont.woff2',
   '/ExhibitionWebApp/css/amazeui.min.css'
 ]
