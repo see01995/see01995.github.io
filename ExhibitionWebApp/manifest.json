@@ -2,7 +2,7 @@
   "name": "ExhibitionWebApp",
   "short_name": "Exhibition PWA",
   "display": "standalone",
-  "start_url": "/ExhibitionWebApp",
+  "start_url": "/ExhibitionWebApp/index.html",
   "theme_color": "#8888ff",
   "background_color": "#313131",
   "icons": [
