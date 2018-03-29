@@ -10,9 +10,9 @@ var cacheList = [
   "/ExhibitionWebApp/top.png",
   "/ExhibitionWebApp/sniec.json",
   '/ExhibitionWebApp/js/amazeui.min.js',
-  '/ExhibitionWebApp/js/bython.js',
+  '/ExhibitionWebApp/js/brython.js',
   '/ExhibitionWebApp/js/brython_modules.js',
-  '/ExhibitionWebApp/js/jquery-3.3.2.min.js',
+  '/ExhibitionWebApp/js/jquery-3.3.1.min.js',
   '/ExhibitionWebApp/fonts/fontawesome-webfont.woff2',
   '/ExhibitionWebApp/css/amazeui.min.css'
 ]
