@@ -3,18 +3,19 @@ console.log('Script loaded!')
 var cacheStorageKey = 'ExhibitionWebApp-1.2'
 
 var cacheList = [
-  '/ExhibitionWebApp/',
-  "/ExhibitionWebApp/index.html",
-  "/ExhibitionWebApp/expo_info.py",
-  "/ExhibitionWebApp/index.py",
-  "/ExhibitionWebApp/top.png",
-  "/ExhibitionWebApp/sniec.json",
-  '/ExhibitionWebApp/js/amazeui.min.js',
-  '/ExhibitionWebApp/js/brython.js',
-  '/ExhibitionWebApp/js/brython_modules.js',
-  '/ExhibitionWebApp/js/jquery-3.3.1.min.js',
-  '/ExhibitionWebApp/fonts/fontawesome-webfont.woff2',
-  '/ExhibitionWebApp/css/amazeui.min.css'
+  '/',
+  "/index.html",
+  "/expo_info.py",
+  "/index.py",
+  "/top.png",
+  "/sniec.json",
+  "/shexpo.json",
+  '/js/amazeui.min.js',
+  '/js/brython.js',
+  '/js/brython_modules.js',
+  '/js/jquery-3.3.1.min.js',
+  '/fonts/fontawesome-webfont.woff2',
+  '/css/amazeui.min.css'
 ]
 
 self.addEventListener('install', function(e) {
