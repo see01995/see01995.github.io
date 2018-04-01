@@ -76,9 +76,9 @@ def refresh():
         if(item.checked==True):
             date_info = document['datepicker'].value.split('-') #0:year,1:month,2:day
             lines = get_file_text(item.value.lower()+'.json')
-            expo_list_year = json.loads(lines)[date_info[0]]
+            expo_list = json.loads(lines)[date_info[0]][str(int(date_info[1]))]
             #show_expo_list(expo_list_year)
-            expo_list += list(filter(lambda x: (x['start'][:7]==date_info[0]+'/'+date_info[1])or(x['end'][:7]==date_info[0]+'/'+date_info[1]),expo_list_year))
+            #expo_list += list(filter(lambda x: (x['start'][:7]==date_info[0]+'/'+date_info[1])or(x['end'][:7]==date_info[0]+'/'+date_info[1]),expo_list_year))
             #show_expo_list(expo_list)
 
     latest_expo = 1

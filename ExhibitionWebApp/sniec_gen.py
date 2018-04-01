@@ -82,17 +82,19 @@ def get_expo_list(abb,year,month):
 if __name__ == '__main__' :
     now = datetime.now()
     expo_list = list()
-    json_list = list()
+    expo_json = dict()
+    expo_json['2018'] = dict()
     for key,place in pattern.items():
         for i in range(12):
-            expo_list += get_expo_list(key,now.year,i+1)
-    for expo in expo_list:
-        #expo.show_info()
-        #expo.gen_json()
-        json_list.append(expo.gen_json())
+            expo_list = get_expo_list(key,now.year,i+1)
+            expo_json['2018'][str(i+1)] = list()
+            for expo in expo_list:
+                #expo.show_info()
+                #expo.gen_json()
+                expo_json['2018'][str(i+1)].append(expo.gen_json())
 
-    json_list = merge_list(json_list)
-    print(json_list)
+    #expo_json = merge_list(expo_json)
+    #print(expo_json)
     fp = open('sniec.json','w')
-    json.dump({str(now.year):json_list},fp)
+    json.dump(expo_json,fp)
     fp.close()
