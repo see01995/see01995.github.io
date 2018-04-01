@@ -20,6 +20,7 @@ def add_place(name,abb,default=False):
     return place_label
 
 document['place_list'] <= add_place('上海新国际博览中心','SNIEC',True)
+document['place_list'] <= add_place('上海世博展览馆','SHEXPO')
 
 def get_file_text(file_name):
     fake_qs = '?foo={}'.format(window.Date.new().getTime())
@@ -76,10 +77,12 @@ def refresh():
         if(item.checked==True):
             date_info = document['datepicker'].value.split('-') #0:year,1:month,2:day
             lines = get_file_text(item.value.lower()+'.json')
-            expo_list = json.loads(lines)[date_info[0]][str(int(date_info[1]))]
+            expo_list += json.loads(lines)[date_info[0]][str(int(date_info[1]))]
             #show_expo_list(expo_list_year)
             #expo_list += list(filter(lambda x: (x['start'][:7]==date_info[0]+'/'+date_info[1])or(x['end'][:7]==date_info[0]+'/'+date_info[1]),expo_list_year))
             #show_expo_list(expo_list)
+
+    expo_list.sort(key = lambda x: (int(x['start'][:4])*10000 + int(x['start'][5:7])*100 + int(x['start'][8:10])))
 
     latest_expo = 1
     goto_li = ''
