@@ -26,7 +26,14 @@ def get_expo_list(page):
         item_json.update({"addr":"上海市静安区延安中路1000号"})
         item_json.update({"url":browser.current_url})
         item_json.update({"hall":"无信息"})
-        date_info = info_list[0].text.replace(".","/").split('-')
+        date_info = info_list[0].text.split('-')
+        for idx,date in enumerate(date_info):
+            temp = date.split(".")
+            if(len(temp[0])==1):
+                temp[0] = "0"+temp[0]
+            if(len(temp[1])==1):
+                temp[1] = "0"+temp[1]
+            date_info[idx] = temp[0]+"/"+temp[1]
         item_json.update({"start":date_info[0]})
         item_json.update({"end":date_info[1]})
         page_json.append(item_json)
@@ -45,11 +52,11 @@ for i in range(page_num):
     print('-----------------')
     print(len(expo_page_json))
     for m in range(12):
-        month = "{:d}/".format(m+1)
+        month = "2018/{:02d}/".format(m+1)
         print('month={:s}'.format(month))
         for item in expo_page_json:
             print(item["start"])
-            if(month in item["start"]):
+            if(month in "2018/"+item["start"]):
                 print('ok')
                 expo_json['2018'][str(m+1)].append(item)
     print(expo_json)
