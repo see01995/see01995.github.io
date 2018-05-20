@@ -7,6 +7,7 @@ var cacheList = [
   "index.html",
   "main.css",
   "tape.png",
+  "data.json",
   "brython.js",
   "brython_dist.js",
   "clock.py",
@@ -32,7 +33,7 @@ self.addEventListener('activate', function(event) {
     caches.keys().then(function(cacheNames) {
       return Promise.all(
         cacheNames.map(function(cacheName) {
-          // Èç¹ûµ±Ç°°æ±¾ºÍ»º´æ°æ±¾²»Ò»ÖÂ
+          // å¦‚æœå½“å‰ç‰ˆæœ¬å’Œç¼“å­˜ç‰ˆæœ¬ä¸ä¸€è‡´
           if (cacheName !== cacheStorageKey) {
             console.log('Activate event: del cache')
             return caches.delete(cacheName);
