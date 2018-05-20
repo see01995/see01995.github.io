@@ -33,7 +33,7 @@ def get_expo_list(page):
                 temp[0] = "0"+temp[0]
             if(len(temp[1])==1):
                 temp[1] = "0"+temp[1]
-            date_info[idx] = temp[0]+"/"+temp[1]
+            date_info[idx] = "2018/"+temp[0]+"/"+temp[1]
         item_json.update({"start":date_info[0]})
         item_json.update({"end":date_info[1]})
         page_json.append(item_json)
@@ -56,7 +56,7 @@ for i in range(page_num):
         print('month={:s}'.format(month))
         for item in expo_page_json:
             print(item["start"])
-            if(month in "2018/"+item["start"]):
+            if(month in item["start"]):
                 print('ok')
                 expo_json['2018'][str(m+1)].append(item)
     print(expo_json)
