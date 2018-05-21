@@ -23,6 +23,7 @@ document['place_list'] <= add_place('上海新国际博览中心','SNIEC',True)
 document['place_list'] <= add_place('上海世博展览馆','SHEXPO')
 document['place_list'] <= add_place('国家会展中心(上海)','NECCSH')
 document['place_list'] <= add_place('上海博览中心','SHZLZX')
+document['place_list'] <= add_place('深圳会展中心','SZCEC')
 
 def get_file_text(file_name):
     fake_qs = '?foo={}'.format(window.Date.new().getTime())
